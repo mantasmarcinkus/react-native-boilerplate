@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "sourceMap": true,
+        "noImplicitAny": true,
+        "module": "commonjs",
+        "target": "es2015",
+        "jsx": "react",
+        "strictNullChecks": true,
+        "allowJs": true,
+        "baseUrl" : "./build",
+        "moduleResolution": "node"
+    },
+    "include": [
+        "src/**/*"
+    ]
+}
