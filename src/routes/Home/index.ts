@@ -3,5 +3,5 @@ import { reducer } from './modules';
 import * as container from './containers';
 
 export const initReducer = (store: any) => {
-  injectReducer(store, { key: 'data', reducer })
-}
+  injectReducer(store, { key: 'data', reducer });
+};

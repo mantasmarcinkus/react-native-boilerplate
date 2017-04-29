@@ -1,9 +1,9 @@
-import * as React from "react";
-import { Provider } from "react-redux";
-import { Navigator, View } from "react-native";
+import * as React from 'react';
+import { Provider } from 'react-redux';
+import { Navigator, View } from 'react-native';
 import { scene } from '../layouts/scene';
 import { initReducer } from '../routes/Home';
-import App from "../routes/Home/containers";
+import App from '../routes/Home/containers';
 
 // DONE
 export default class AppContainer extends React.Component<{ store: any }, {}> {
@@ -19,7 +19,7 @@ export default class AppContainer extends React.Component<{ store: any }, {}> {
           renderScene={scene}
           initialRoute={{
             component: App,
-            title: "React native app"
+            title: 'React native app'
           }}
         />
       </Provider>

@@ -1,11 +1,11 @@
-import { createStore, applyMiddleware, compose, Store } from "redux";
-import thunkMiddleware from "redux-thunk";
-import { createLogger } from "redux-logger";
+import { createStore, applyMiddleware, compose, Store } from 'redux';
+import thunkMiddleware from 'redux-thunk';
+import { createLogger } from 'redux-logger';
 import makeRootReducer from './reducers';
 
 // DONE
 interface StoreWithAsyncReducers<S> extends Store<S> {
-  asyncReducers?: any
+  asyncReducers?: any;
 }
 const configureStore = function (initialState = {}) {
   const middleware = [createLogger(), thunkMiddleware];

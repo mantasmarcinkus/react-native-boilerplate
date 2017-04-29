@@ -1,7 +1,7 @@
-import { combineReducers } from "redux";
+import { combineReducers } from 'redux';
 
-export const REQUEST_DATA = "REQUEST_DATA";
-export const RECEIVE_DATA = "RECEIVE_DATA";
+export const REQUEST_DATA = 'REQUEST_DATA';
+export const RECEIVE_DATA = 'RECEIVE_DATA';
 
 interface ActionCreator {
   type: string;
@@ -26,7 +26,7 @@ export const fetchData = () => {
   return (dispatch: any) => {
     dispatch(requestData());
     return setTimeout(() => {
-      const data = { message: "Hello" };
+      const data = { message: 'Hello' };
       dispatch(receiveData(data));
     }, 300);
   };
@@ -34,14 +34,14 @@ export const fetchData = () => {
 
 const initialState = {
   isFetching: false,
-  message: ""
-}
+  message: ''
+};
 export const reducer = (state = initialState, action: ActionCreator) => {
   switch (action.type) {
     case REQUEST_DATA:
-      return {...state, isFetetching: true}
+      return {...state, isFetetching: true};
     case RECEIVE_DATA:
-      return {...state, isFetetching: false, message: action.data.message}
+      return {...state, isFetetching: false, message: action.data.message};
     default:
       return state;
   }

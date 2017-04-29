@@ -1,5 +1,5 @@
-import * as React from "react";
-import { PixelRatio, StatusBar, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import * as React from 'react';
+import { PixelRatio, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 const NAV_BAR_HEIGHT = 44;
 const STATUS_BAR_HEIGHT = 20;
@@ -8,19 +8,19 @@ const NAV_HEIGHT = NAV_BAR_HEIGHT + STATUS_BAR_HEIGHT;
 const styles = StyleSheet.create({
   navBarContainer: {
     height: NAV_HEIGHT,
-    backgroundColor: "white",
+    backgroundColor: 'white',
     paddingBottom: 5,
-    borderBottomColor: "rgba(0, 0, 0, 0.5)",
+    borderBottomColor: 'rgba(0, 0, 0, 0.5)',
     borderBottomWidth: 1 / PixelRatio.get()
   },
   navBar: {
     height: NAV_HEIGHT,
-    flexDirection: "row",
-    justifyContent: "space-between"
+    flexDirection: 'row',
+    justifyContent: 'space-between'
   },
   customTitle: {
-    position: "absolute",
-    alignItems: "center",
+    position: 'absolute',
+    alignItems: 'center',
     bottom: 5,
     left: 0,
     right: 0
@@ -29,12 +29,12 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginVertical: 10,
     flex: 2,
-    textAlign: "center"
+    textAlign: 'center'
   },
   navBarTitleText: {
-    color: "#373e4d",
-    fontWeight: "500",
-    position: "absolute",
+    color: '#373e4d',
+    fontWeight: '500',
+    position: 'absolute',
     left: 0,
     right: 0,
     bottom: 15
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     paddingRight: 10
   },
   navBarButtonText: {
-    color: "#5890ff"
+    color: '#5890ff'
   }
 });
 
@@ -115,7 +115,7 @@ export default class NavigationBar extends React.Component<NavigationBarProps, {
       <TouchableOpacity onPress={onPress}>
         <View style={styles.navBarLeftButton}>
           <Text style={[styles.navBarText, styles.navBarButtonText, customStyle]}>
-            {prevTitle || "Back"}
+            {prevTitle || 'Back'}
           </Text>
         </View>
       </TouchableOpacity>
@@ -178,7 +178,7 @@ export default class NavigationBar extends React.Component<NavigationBarProps, {
       <TouchableOpacity onPress={() => onNext(navigator, route)}>
         <View style={styles.navBarRightButton}>
           <Text style={[styles.navBarText, styles.navBarButtonText, customStyle]}>
-            {nextTitle || "Next"}
+            {nextTitle || 'Next'}
           </Text>
         </View>
       </TouchableOpacity>
@@ -186,10 +186,10 @@ export default class NavigationBar extends React.Component<NavigationBarProps, {
   }
   render() {
     // TODO: Refactor this
-    if (this.props.statusBar === "lightContent") {
-      StatusBar.setBarStyle("light-content", false);
-    } else if (this.props.statusBar === "default") {
-      StatusBar.setBarStyle("default", false);
+    if (this.props.statusBar === 'lightContent') {
+      StatusBar.setBarStyle('light-content', false);
+    } else if (this.props.statusBar === 'default') {
+      StatusBar.setBarStyle('default', false);
     }
 
     let { style, backgroundStyle } = this.props;

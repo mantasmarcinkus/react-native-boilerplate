@@ -1,5 +1,5 @@
 import * as React from 'react';
-import configureStore from "./store/store";
+import configureStore from './store/store';
 import AppContainer from './containers/AppContainer';
 
 const store = configureStore();
