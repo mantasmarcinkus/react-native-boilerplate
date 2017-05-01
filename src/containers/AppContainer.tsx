@@ -5,10 +5,10 @@ import { scene } from '../layouts/scene';
 import { initReducer } from '../routes/Home';
 import App from '../routes/Home/containers';
 
-// DONE
 export default class AppContainer extends React.Component<{ store: any }, {}> {
   constructor(props: any) {
     super(props);
+    // TODO: move this to navigation; when the Component is requested, injects it's own reducer to global reducers
     initReducer(this.props.store);
   }
   render() {

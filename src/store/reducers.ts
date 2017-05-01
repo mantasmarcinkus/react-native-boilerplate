@@ -1,7 +1,5 @@
 import { combineReducers, Reducer, ReducersMapObject } from 'redux';
 import { baseReducer } from './reducer';
-// DONE.
-
 
 export const makeRootReducer = (asyncReducers?: ReducersMapObject): Reducer<any> => {
   return combineReducers({
@@ -10,7 +8,7 @@ export const makeRootReducer = (asyncReducers?: ReducersMapObject): Reducer<any>
   });
 };
 
-export const injectReducer = (store: any, { key, reducer }: { key: string, reducer: any }) => {
+export const injectReducer = (store: any, { key, reducer }: { key: string, reducer: any }): void => {
   if (Object.hasOwnProperty.call(store.asyncReducers, key)) return;
 
   store.asyncReducers[key] = reducer;

@@ -1,4 +1,4 @@
-// App level reducer
+// Base app reducer
 export const baseReducer = (state = {}, action: any) => {
   switch (action.type) {
     default:

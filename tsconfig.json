@@ -7,7 +7,7 @@
         "jsx": "react",
         "strictNullChecks": true,
         "allowJs": true,
-        "baseUrl" : "./build",
+        "baseUrl" : "./src",
         "moduleResolution": "node"
     },
     "include": [

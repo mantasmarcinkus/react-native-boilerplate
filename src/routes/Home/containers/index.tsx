@@ -1,35 +1,18 @@
-import * as React from 'react';
-import { Text, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
-import { fetchData } from '../modules';
+import { bindActionCreators, Dispatch } from 'redux';
+import { ActionCreators, HomeState } from '../modules';
+import Home, { Props } from '../components';
 
-interface Props {
-  // TODO: fix anya
-  dispatch(func: any): void;
-  isFetching: boolean;
-  message: string;
-}
+const mapStateToProps = ({ data }: { data: HomeState }) => {
+  return {
+    isFetching: data.isFetching,
+    isFetchingApi: data.isFetchingApi,
+    message: data.message,
+    data: data.data
+  };
+};
 
-class App extends React.Component<Props, {}> {
-  componentDidMount() {
-    this.props.dispatch(fetchData());
-  }
-  render() {
-    const { dispatch = () => {}, isFetching = false, message = '' } = this.props;
-    return (
-      <ScrollView
-        style={{flex: 1}}
-        contentContainerStyle={{
-          justifyContent: 'center',
-          alignItems: 'center'
-        }}>
-        <Text>{this.props.isFetching ? 'Loading' : this.props.message}</Text>
-      </ScrollView>
-    );
-  }
-}
+const mapDispatchToProps = (dispatch: Dispatch<any>) => ({ ...bindActionCreators(ActionCreators, dispatch) });
 
-export default connect((state) => ({
-  isFetching: state.data.isFetching,
-  message: state.data.message
-}))(App);
+// TO DO: fix second argument type
+export default connect<HomeState, {}, Props>(mapStateToProps, mapDispatchToProps)(Home);
